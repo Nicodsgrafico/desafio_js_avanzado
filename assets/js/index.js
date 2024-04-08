@@ -1,8 +1,5 @@
 import obtenerInstancia from "./modulos/Tipos.js";
 
-
-obtenerInstancia
-//Selectores
 const selectorAnimal = document.getElementById(`animal`);
 const selectorAge = document.getElementById(`edad`);
 const selectorComent = document.getElementById(`comentarios`);
@@ -11,12 +8,10 @@ const modal = document.getElementById(`exampleModal`);
 const preview = document.getElementById(`preview`);
 const boton = document.getElementById(`btnRegistrar`);
 
-//Variables
 let img;
 let audio;
 let animalesInvestigados = [];
 
-//Se obtiene Json
 const obtenerJson = (async () => {
     try {
         const response = await fetch('animales.json');
@@ -78,11 +73,10 @@ const mostrarAnimales = () => {
 
         cardImg.addEventListener(`click`, () => {
             mostrarDatosAnimal(animal);
-        
+
         })
-        //Y si lo hago con el listener nomas y era xD
         cardBtn.addEventListener(`click`, () => {
-            switch(animal.nombre){
+            switch (animal.nombre) {
                 case "Leon":
                     animal.rugir()
                     break;
@@ -104,7 +98,7 @@ const mostrarAnimales = () => {
         })
     })
 }
-// Función para mostrar los datos del animal en el modal
+
 const mostrarDatosAnimal = (animal) => {
     const modalBody = document.querySelector('.modal-body');
     modalBody.innerHTML = `
@@ -114,7 +108,6 @@ const mostrarDatosAnimal = (animal) => {
         <p>${animal.comentarios}</p>
         
     `;
-    // Mostrar el modal
     $('#exampleModal').modal('show');
 }
 
@@ -123,4 +116,4 @@ const resetFormulario = () => {
     document.getElementById('edad').options[0].selected = true;
     document.getElementById('comentarios').value = '';
     document.getElementById('preview').innerHTML = '';
-  };
+};

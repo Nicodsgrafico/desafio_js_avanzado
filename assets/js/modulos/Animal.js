@@ -1,5 +1,5 @@
 class Animal {
-    constructor(nombre,edad,img,comentarios,sonido){
+    constructor(nombre, edad, img, comentarios, sonido) {
         this._nombre = nombre;
         this._edad = edad;
         this._img = img;
@@ -7,34 +7,34 @@ class Animal {
         this._sonido = sonido;
     }
 
-    get nombre(){
+    get nombre() {
         return this._nombre;
     }
-    set nombre(nuevoNombre){
+    set nombre(nuevoNombre) {
         this._nombre = nuevoNombre;
     }
-    get edad(){
+    get edad() {
         return this._edad;
     }
-    set edad(nuevaEdad){
+    set edad(nuevaEdad) {
         this._edad = nuevaEdad;
     }
-    get img(){
+    get img() {
         return this._img;
     }
-    set img(nuevaImg){
+    set img(nuevaImg) {
         this._img = nuevaImg;
     }
-    get comentarios(){
+    get comentarios() {
         return this._comentarios;
     }
-    set comentarios(nuevosComentarios){
+    set comentarios(nuevosComentarios) {
         this._comentarios = nuevosComentarios;
     }
-    get sonido(){
+    get sonido() {
         return this._sonido;
     }
-    set sonido(nuevoSonido){
+    set sonido(nuevoSonido) {
         this._sonido = nuevoSonido;
     }
 }
