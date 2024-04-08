@@ -7,6 +7,7 @@ const selectorAnimal = document.getElementById(`animal`);
 const selectorAge = document.getElementById(`edad`);
 const selectorComent = document.getElementById(`comentarios`);
 const animalesContainer = document.getElementById(`Animales`);
+const modal = document.getElementById(`exampleModal`);
 const preview = document.getElementById(`preview`);
 const boton = document.getElementById(`btnRegistrar`);
 
@@ -68,7 +69,6 @@ const mostrarAnimales = () => {
         cardImg.setAttribute(`class`, `card-img-top p-2`);
         cardImg.setAttribute(`src`, `${animal._img}`);
         cardBtn.setAttribute(`class`, `btn btn-secondary w-100`);
-        
 
         cardBtn.innerHTML = `<img src="./assets/imgs/audio.svg" alt="Icon Description">`;
 
@@ -76,7 +76,10 @@ const mostrarAnimales = () => {
         card.appendChild(cardImg);
         card.appendChild(cardBtn);
 
-
+        cardImg.addEventListener(`click`, () => {
+            mostrarDatosAnimal(animal);
+        
+        })
         //Y si lo hago con el listener nomas y era xD
         cardBtn.addEventListener(`click`, () => {
             switch(animal.nombre){
@@ -100,4 +103,17 @@ const mostrarAnimales = () => {
             }
         })
     })
+}
+// Función para mostrar los datos del animal en el modal
+const mostrarDatosAnimal = (animal) => {
+    const modalBody = document.querySelector('.modal-body');
+    modalBody.innerHTML = `
+    <img src="${animal._img}" alt="Imagen del animal" class="img-fluid">
+        <p>Edad: ${animal.edad}</p>
+        <strong>Comentarios</strong>
+        <p>${animal.comentarios}</p>
+        
+    `;
+    // Mostrar el modal
+    $('#exampleModal').modal('show');
 }
