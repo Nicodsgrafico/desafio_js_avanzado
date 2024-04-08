@@ -48,3 +48,8 @@ body {
     max-width: 85% !important;
 }
 
+.card-img-top{
+  height: 180px;
+  width: 140px;
+  object-fit: cover;
+}
