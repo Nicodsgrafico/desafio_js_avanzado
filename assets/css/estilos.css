@@ -60,4 +60,21 @@ body {
   height: 180px;
   width: 140px;
   object-fit: cover;
+  cursor: pointer;
+}
+
+.btn{
+  width: 140px;
+  background-color: rgb(89, 89, 89);
+}
+
+.btn img{
+  width: 20px;
+  cursor: pointer;
+}
+
+#Animales div{
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
 }

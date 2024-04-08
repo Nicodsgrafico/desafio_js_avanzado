@@ -22,7 +22,6 @@ const obtenerJson = (async () => {
         const response = await fetch('animales.json');
         const json = await response.json();
         const animales = json.animales;
-        console.log(animales);
         return animales;
     } catch (error) {
         console.log("Error: " + error);
@@ -53,6 +52,7 @@ boton.addEventListener(`click`, () => {
         let objetoAnimal = obtenerInstancia(name, age, img, comment, audio);
         animalesInvestigados.push(objetoAnimal);
         mostrarAnimales();
+        resetFormulario();
     } else {
         alert("Por favor rellene todos los campos");
     }
@@ -66,9 +66,9 @@ const mostrarAnimales = () => {
         let card = document.createElement(`div`);
         let cardImg = document.createElement(`img`);
         let cardBtn = document.createElement(`button`);
-        cardImg.setAttribute(`class`, `card-img-top p-2`);
+        cardImg.setAttribute(`class`, `card-img-top `);
         cardImg.setAttribute(`src`, `${animal._img}`);
-        cardBtn.setAttribute(`class`, `btn btn-secondary w-100`);
+        cardBtn.setAttribute(`class`, `btn`);
 
         cardBtn.innerHTML = `<img src="./assets/imgs/audio.svg" alt="Icon Description">`;
 
@@ -117,3 +117,10 @@ const mostrarDatosAnimal = (animal) => {
     // Mostrar el modal
     $('#exampleModal').modal('show');
 }
+
+const resetFormulario = () => {
+    document.getElementById('animal').options[0].selected = true;
+    document.getElementById('edad').options[0].selected = true;
+    document.getElementById('comentarios').value = '';
+    document.getElementById('preview').innerHTML = '';
+  };
